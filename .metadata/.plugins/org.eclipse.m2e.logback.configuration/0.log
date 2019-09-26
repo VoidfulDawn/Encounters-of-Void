@@ -1,0 +1,106 @@
+2019-09-26 23:13:12,110 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-09-26 23:15:51,852 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2019-09-26 23:15:51,957 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2019-09-26 23:15:51,991 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2019-09-26 23:15:52,028 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2019-09-26 23:16:13,822 [Worker-8: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\pom.xml
+2019-09-26 23:16:17,639 [Worker-8: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Encounters_Of_Void:Encounters_Of_Void:0.0.1-SNAPSHOT @ C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\pom.xml.
+2019-09-26 23:16:19,359 [Worker-8: Creating maven-archetype-quickstart] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Encounters_Of_Void/src/main/java
+2019-09-26 23:16:19,374 [Worker-8: Creating maven-archetype-quickstart] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /Encounters_Of_Void/src/test/java
+2019-09-26 23:16:19,942 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1-sources.jar
+2019-09-26 23:16:24,821 [Worker-11: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1-sources.jar
+2019-09-26 23:16:26,546 [Worker-11: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for junit:junit:3.8.1
+2019-09-26 23:16:27,039 [Worker-8: Creating maven-archetype-quickstart] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 13 sec
+2019-09-26 23:16:27,925 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:16:27,926 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:16:27,929 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:16:27,940 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:06,591 [Worker-10: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Encounters_Of_Void:Encounters_Of_Void:0.0.1-SNAPSHOT @ C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\pom.xml.
+2019-09-26 23:17:07,294 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:07,295 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:07,312 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:07,330 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:08,203 [Worker-14: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar
+2019-09-26 23:17:08,403 [Worker-14: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1-sources.jar
+2019-09-26 23:17:09,243 [Worker-14: Download sources and javadoc] WARN  o.e.a.i.i.DefaultRepositoryEventDispatcher - Failed to dispatch repository event to org.eclipse.m2e.core.internal.embedder.EclipseRepositoryListener: null
+2019-09-26 23:17:09,313 [Worker-14: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for dom4j:dom4j:1.6.1
+2019-09-26 23:17:09,505 [Worker-14: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar
+2019-09-26 23:17:09,862 [Worker-14: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2-sources.jar
+2019-09-26 23:17:09,832 [Worker-8: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: Encounters_Of_Void:Encounters_Of_Void:0.0.1-SNAPSHOT @ C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\pom.xml.
+2019-09-26 23:17:10,602 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:10,626 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:10,627 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:10,660 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:10,772 [Worker-14: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for xml-apis:xml-apis:1.0.b2
+2019-09-26 23:17:11,733 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:11,734 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:11,745 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:11,755 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:14,380 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:14,380 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:14,407 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:14,420 [Worker-13: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:34,637 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:34,637 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:34,753 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:34,763 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:41,860 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:41,861 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:41,870 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:41,879 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:48,827 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:48,827 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:48,851 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:48,866 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:17:56,995 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:56,995 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:17:57,011 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:17:57,017 [Worker-14: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:18:16,737 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:16,738 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:18:16,843 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:16,864 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:18:31,036 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:31,036 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:18:31,050 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:31,056 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:18:39,231 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:39,232 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:18:39,253 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:18:39,264 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:19:40,722 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:19:40,722 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:19:40,760 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:19:40,775 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:20:01,024 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:20:01,024 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:20:01,070 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:20:01,172 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:22:16,453 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:22:16,454 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:22:16,466 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:22:16,477 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:22:49,243 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:22:49,243 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:22:49,261 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:22:49,276 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:28:50,393 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:28:50,394 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:28:50,423 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:28:50,450 [Worker-10: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:29:05,212 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:05,212 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:29:05,232 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:05,249 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:29:20,005 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:20,006 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:29:20,014 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:20,026 [Worker-18: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:29:28,429 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:28,430 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:29:28,446 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:28,461 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
+2019-09-26 23:29:48,854 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:48,854 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\main\resources
+2019-09-26 23:29:48,871 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-09-26 23:29:48,899 [Worker-17: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Saied Sadegh\Desktop\Encounter of Void\ws\Encounters_Of_Void\src\test\resources
