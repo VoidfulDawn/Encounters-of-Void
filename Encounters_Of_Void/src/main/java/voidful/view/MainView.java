@@ -89,6 +89,9 @@ public class MainView implements Observer {
 	    control.closing();
 
 	});
+	saveItem.setOnAction(e -> {
+	    control.saveSession(sessionKeeper.getSession());
+	});
 	newItem.setOnAction(e -> {
 	    control.createAndLoadNewSession();
 	});

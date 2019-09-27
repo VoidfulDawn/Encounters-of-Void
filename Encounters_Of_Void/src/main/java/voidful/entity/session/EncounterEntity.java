@@ -11,8 +11,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class EncounterEntity implements IEntity {
 
     @XmlAttribute
@@ -20,7 +20,6 @@ public class EncounterEntity implements IEntity {
     @XmlAttribute
     private String name;
     @XmlAnyElement
-    @XmlElementWrapper
     private List<IEntity> children = new ArrayList<>();
 
     public EncounterEntity() {

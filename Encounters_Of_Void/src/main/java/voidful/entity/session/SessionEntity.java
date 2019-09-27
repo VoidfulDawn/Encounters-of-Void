@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -23,9 +24,8 @@ public class SessionEntity implements IEntity {
     private String lastUpdateDate;
     @XmlAttribute
     private String createdDate;
-    @XmlAnyElement
-    @XmlElementWrapper(name = "children")
-    private List<IEntity> children;
+    @XmlElement
+    private List<EncounterEntity> children;
 
     public SessionEntity() {
 	this.createdDate = String.valueOf(new Date().getTime());
@@ -59,11 +59,11 @@ public class SessionEntity implements IEntity {
 	this.createdDate = createdDate;
     }
 
-    public List<IEntity> getChildren() {
+    public List<EncounterEntity> getChildren() {
 	return children;
     }
 
-    public void setChildren(List<IEntity> children) {
+    public void setChildren(List<EncounterEntity> children) {
 	this.children = children;
     }
 

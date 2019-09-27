@@ -77,7 +77,7 @@ public class Control {
 
     }
 
-    private void saveSession(SessionEntity se) {
+    public void saveSession(SessionEntity se) {
 	if (se == null)
 	    return;
 	if (!FileUtil.DIRECTORY.exists()) {

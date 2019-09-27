@@ -58,7 +58,7 @@ public class MainPane extends VBox {
     }
 
     private void loadSessionEntities() {
-	List<IEntity> entities;
+	List<? extends IEntity> entities;
 	if (sessionKeeper.getSession().getChildren() == null)
 	    sessionKeeper.getSession().setChildren(new ArrayList<>());
 	entities = sessionKeeper.getSession().getChildren();
