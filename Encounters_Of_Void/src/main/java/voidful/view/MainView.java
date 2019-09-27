@@ -3,6 +3,7 @@ package voidful.view;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
+import java.util.Observer;
 
 import javafx.event.EventTarget;
 import javafx.scene.Node;
@@ -23,7 +24,7 @@ import voidful.util.DialogUtil;
 import voidful.util.ExceptionUtil;
 import voidful.view.component.MainPane;
 
-public class MainView extends Observable {
+public class MainView implements Observer {
 	private enum ComponentKey{
 		SAVE_BUTTON, NEW_SESSION, OPEN_SESSION, EXIT, SAVE_SESSION,
 		
@@ -35,8 +36,8 @@ public class MainView extends Observable {
 	public MainView(Stage ps, SessionKeeper s, Control c)  {
 		this.ps = ps;
 		this.sessionKeeper=s;
+		this.sessionKeeper.addObserver(this);
 		this.control = c;
-		this.addObserver(sessionKeeper);
 		this.init();
 		
 	}
@@ -83,6 +84,7 @@ public class MainView extends Observable {
     	newItem.setOnAction(e->{
     		control.createAndLoadNewSession();
     	});
+    	openFileItem.setOnAction(e->{control.loadSavedSession();});
     	interactables.put(ComponentKey.NEW_SESSION,newItem);
     	interactables.put(ComponentKey.SAVE_SESSION,saveItem);
     	interactables.put(ComponentKey.OPEN_SESSION,openFileItem);
@@ -105,11 +107,19 @@ public class MainView extends Observable {
 		test.textProperty().addListener((observable,oldValue,newValue)->{
 			if(oldValue!=newValue)
 			{
-			setChanged();
-			notifyObservers();
+				sessionKeeper.setEverythingSaved(false);
 			}
 		});
 		return new MainPane(test);
+		
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		System.out.printf("Observable has an update");
+		if(o.equals(sessionKeeper)) {
+			ps.setTitle("Encounters of Void - "+sessionKeeper.getSession().getName());
+			
+		}
 		
 	}
 	

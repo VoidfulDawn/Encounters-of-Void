@@ -1,15 +1,32 @@
 package voidful.main;
 
+import java.io.File;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+import org.dom4j.Document;
+import org.dom4j.io.DocumentResult;
+
 import voidful.entity.session.SessionEntity;
 import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
+import voidful.util.FileUtil;
 
 public class Control {
 
 	private SessionKeeper sessionKeeper;
-
+	JAXBContext sessionContext;
 	public Control(SessionKeeper s) {
 		this.sessionKeeper = s;
+		 try {
+			sessionContext = JAXBContext.newInstance(SessionEntity.class);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+			DialogUtil.showError(e.getMessage());
+		}
 	}
 
 	public void closing() {
@@ -26,12 +43,28 @@ public class Control {
 		
 	}
 	private void saveCorrectly() {
-		sessionKeeper.save();
+		
+		
+		sessionKeeper.setEverythingSaved(true);
 	}
 
 	public void createAndLoadNewSession() {
 		try {
+		saveSession(sessionKeeper.getSession());
 		SessionEntity se = DialogUtil.createSessionDialog();
+		saveSession(se);
+		loadSession(se);
+		}catch(Exception e)
+		{
+			DialogUtil.showError(e.getMessage());
+		}
+		
+	}
+	public void loadSavedSession() {
+		try {
+		File sessionFile = DialogUtil.openSessionDialog();
+		Unmarshaller unmarshaller = sessionContext.createUnmarshaller();
+		SessionEntity se= (SessionEntity) unmarshaller.unmarshal(sessionFile);
 		loadSession(se);
 		}catch(Exception e)
 		{
@@ -40,8 +73,31 @@ public class Control {
 		
 	}
 
-	private void loadSession(SessionEntity se) {
+	
+	private void saveSession(SessionEntity se) {
+		if(se==null)return;
+		if(!FileUtil.DIRECTORY.exists()) {
+			FileUtil.SESSION.mkdirs();
+		}
+		if(!FileUtil.SESSION.exists()) {
+			FileUtil.SESSION.mkdir();
+		}
+		try {
+			
+			Marshaller marshaller = sessionContext.createMarshaller();
+			DocumentResult dr = new DocumentResult();
+			marshaller.marshal(se, dr);
+			Document document = dr.getDocument();
+			FileUtil.saveFile(FileUtil.SESSION, se.getName()+"---"+se.getId(), document);
 		
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	
+	}
+	private void loadSession(SessionEntity se) {
+		sessionKeeper.setSession(se);
+		sessionKeeper.setEverythingSaved(true);
 		
 	}
 

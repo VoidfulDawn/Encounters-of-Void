@@ -3,27 +3,35 @@ package voidful.model;
 import java.util.Observable;
 import java.util.Observer;
 
+import voidful.entity.session.SessionEntity;
 
-public class SessionKeeper implements Observer {
+
+public class SessionKeeper extends Observable {
 
 	private boolean isEverythingSaved=true;
+	private SessionEntity se;
 	public SessionKeeper() {
-		
-	}
-
-	@Override
-	public void update(Observable o, Object arg) {
-		System.out.print("I was notified");
-	if(isEverythingSaved)
-		isEverythingSaved=false;
 		
 	}
 
 	public boolean isEverythingSaved() {
 		return isEverythingSaved;
 	}
-	
-	public void save() {
-		isEverythingSaved=true;
+
+	public void setEverythingSaved(boolean isEverythingSaved) {
+		this.isEverythingSaved = isEverythingSaved;
 	}
+
+	public void setSession(SessionEntity se) {
+		this.se=se;
+		this.setChanged();
+		this.notifyObservers();
+	}
+	public SessionEntity getSession()
+	{
+		return se;
+	}
+	
+	
+	
 }
