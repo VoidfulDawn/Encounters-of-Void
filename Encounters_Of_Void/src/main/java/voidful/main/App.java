@@ -11,7 +11,7 @@ import voidful.view.MainView;
 
 public class App extends Application 
 {
-	
+	private MainView v;
     public static void main( String[] args )
     {
         App.launch(args);
@@ -22,7 +22,7 @@ public class App extends Application
 		try {
 		SessionKeeper s = new SessionKeeper();
 		Control c = new Control(s);
-		MainView v = new MainView(ps,s,c);
+		 v = new MainView(ps,s,c);
 		
 		}catch(InitializationError e) {
 			DialogUtil.showError(e.getMessage());
