@@ -80,7 +80,9 @@ public class MainView extends Observable {
     		
         	
     		});
-    	
+    	newItem.setOnAction(e->{
+    		control.createAndLoadNewSession();
+    	});
     	interactables.put(ComponentKey.NEW_SESSION,newItem);
     	interactables.put(ComponentKey.SAVE_SESSION,saveItem);
     	interactables.put(ComponentKey.OPEN_SESSION,openFileItem);

@@ -2,6 +2,7 @@ package voidful.entity.session;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -12,6 +13,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SessionEntity implements IEntity {
 	@XmlAttribute
 	private String name;
+	@XmlAttribute
+	private String id;
 	@XmlElement
 	private String lastUpdateDate;
 	@XmlElement
@@ -22,6 +25,7 @@ public class SessionEntity implements IEntity {
 	public SessionEntity(String name) {
 		this.name = name;
 		this.createdDate = String.valueOf(new Date().getTime());
+		this.id=UUID.randomUUID().toString();
 	}
 	
 	public String getName() {
@@ -47,6 +51,14 @@ public class SessionEntity implements IEntity {
 	}
 	public void setChildren(List<IEntity> children) {
 		this.children = children;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 

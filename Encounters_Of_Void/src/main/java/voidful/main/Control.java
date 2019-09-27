@@ -1,5 +1,6 @@
 package voidful.main;
 
+import voidful.entity.session.SessionEntity;
 import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
 
@@ -26,6 +27,22 @@ public class Control {
 	}
 	private void saveCorrectly() {
 		sessionKeeper.save();
+	}
+
+	public void createAndLoadNewSession() {
+		try {
+		SessionEntity se = DialogUtil.createSessionDialog();
+		loadSession(se);
+		}catch(Exception e)
+		{
+			DialogUtil.showError(e.getMessage());
+		}
+		
+	}
+
+	private void loadSession(SessionEntity se) {
+		
+		
 	}
 
 }

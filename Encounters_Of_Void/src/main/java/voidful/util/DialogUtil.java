@@ -3,6 +3,9 @@ package voidful.util;
 
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextInputDialog;
+import voidful.entity.session.SessionEntity;
+import voidful.exceptions.CreationError;
 
 import java.util.Optional;
 
@@ -33,4 +36,18 @@ public class DialogUtil implements Util {
 		}
 		
 	}
+
+	public static SessionEntity createSessionDialog() {
+		TextInputDialog dialog = new TextInputDialog("New Session");
+		dialog.setTitle("Create new Session");
+		dialog.setHeaderText("Let's start a new session");
+		dialog.setContentText("Please enter the name of the session:");
+
+		// Traditional way to get the response value.
+		Optional<String> result = dialog.showAndWait();
+		if(result.isPresent()) 
+			return new SessionEntity(result.get());
+		
+		throw new CreationError(ExceptionUtil.SESSION_FAILED_CREATION);
+		}
 }
