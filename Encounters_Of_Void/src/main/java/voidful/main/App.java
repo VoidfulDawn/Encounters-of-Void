@@ -8,10 +8,7 @@ import voidful.exceptions.InitializationError;
 import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
 import voidful.view.MainView;
-/**
- * Hello world!
- *
- */
+
 public class App extends Application 
 {
 	
@@ -23,8 +20,10 @@ public class App extends Application
 	@Override
 	public void start(Stage ps) throws Exception {
 		try {
-		MainView v = new MainView(ps);
-		SessionKeeper m = new SessionKeeper(v);
+		SessionKeeper s = new SessionKeeper();
+		Control c = new Control(s);
+		MainView v = new MainView(ps,s,c);
+		
 		}catch(InitializationError e) {
 			DialogUtil.showError(e.getMessage());
 		}
