@@ -1,9 +1,13 @@
 package voidful.entity.formular;
 
-import java.util.Map;
+import java.util.List;
 
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public interface EntityFormular {
 	
-	public Map<EntityAttributeType,String> getElementMap();
+	public List<FormularComponent> getFormular();
 
 }
