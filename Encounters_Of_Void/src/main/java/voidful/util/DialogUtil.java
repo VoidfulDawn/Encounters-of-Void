@@ -87,7 +87,7 @@ public class DialogUtil implements Util {
 	alert.setTitle("Info");
 
 	alert.setHeaderText(
-		"Hey, user!\nWell, hello. \\nThis is the developer of this software. If there are any questions you can ask me them personally via github below.\n I hope that this thing is working and helps you out some way or the other. Send me feedback also via github.");
+		"Hey, user! \nThis is the developer of this software. If there are any questions you can ask me them personally via github below.\n I hope that this thing is working and helps you out some way or the other. Send me feedback also via github.");
 	alert.getDialogPane().setContent(new Hyperlink("https://github.com/VoidfulDawn/Encounters-of-Void"));
 	alert.showAndWait();
 

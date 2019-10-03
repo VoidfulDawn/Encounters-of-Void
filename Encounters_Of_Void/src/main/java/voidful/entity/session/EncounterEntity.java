@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -19,8 +20,16 @@ public class EncounterEntity implements IEntity {
     private String id;
     @XmlAttribute
     private String name;
-    @XmlAnyElement
-    private List<IEntity> children = new ArrayList<>();
+    @XmlElement
+    private String description;
+    @XmlElement
+    private String averagePlayerLevel;
+    @XmlElement
+    private List<Item> reward = new ArrayList<>();
+    @XmlElement
+    private List<NPC> npcs = new ArrayList<>();
+    @XmlElement
+    private List<Monster> monster = new ArrayList<>();
 
     public EncounterEntity() {
 	id = UUID.randomUUID().toString();
@@ -28,22 +37,54 @@ public class EncounterEntity implements IEntity {
 
     @Override
     public String getId() {
-	// TODO Auto-generated method stub
+
 	return id;
     }
 
     @Override
     public String getName() {
-	// TODO Auto-generated method stub
+
 	return name;
     }
 
-    public List<IEntity> getChildren() {
-	return children;
+    public String getDescription() {
+	return description;
     }
 
-    public void setChildren(List<IEntity> children) {
-	this.children = children;
+    public void setDescription(String description) {
+	this.description = description;
+    }
+
+    public String getAveragePlayerLevel() {
+	return averagePlayerLevel;
+    }
+
+    public void setAveragePlayerLevel(String averagePlayerLevel) {
+	this.averagePlayerLevel = averagePlayerLevel;
+    }
+
+    public List<Item> getReward() {
+	return reward;
+    }
+
+    public void setReward(List<Item> reward) {
+	this.reward = reward;
+    }
+
+    public List<NPC> getNpcs() {
+	return npcs;
+    }
+
+    public void setNpcs(List<NPC> npcs) {
+	this.npcs = npcs;
+    }
+
+    public List<Monster> getMonster() {
+	return monster;
+    }
+
+    public void setMonster(List<Monster> monster) {
+	this.monster = monster;
     }
 
     public void setId(String id) {

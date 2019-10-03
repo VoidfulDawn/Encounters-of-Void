@@ -17,6 +17,7 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import voidful.entity.session.EncounterEntity;
 import voidful.exceptions.InitializationError;
 import voidful.main.Control;
 import voidful.model.SessionKeeper;
@@ -124,7 +125,7 @@ public class MainView implements Observer {
 //			}
 //		});
 
-	return new MainPane(sessionKeeper);
+	return new MainPane(sessionKeeper, this);
 
     }
 
@@ -147,5 +148,15 @@ public class MainView implements Observer {
 	menu.getItems().add(menuItem);
 	menu.addEventHandler(Menu.ON_SHOWN, event -> menu.hide());
 	menu.addEventHandler(Menu.ON_SHOWING, event -> menu.fire());
+    }
+
+    public void addEncounter() {
+	EncounterEntity e = new EncounterEntity();
+	e.setDescription("This is a test encounter... yes yes");
+	e.setName("TestEncounter");
+	e.setAveragePlayerLevel("7");
+
+	sessionKeeper.getSession().getChildren().add(e);
+
     }
 }
