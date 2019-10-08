@@ -1,10 +1,9 @@
 package voidful.entity.session;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
+public interface IEntity extends Serializable, Named {
 
-public interface IEntity {
-	
-	public String getId();
-	public String getName();
+    public String getId();
+
 }
