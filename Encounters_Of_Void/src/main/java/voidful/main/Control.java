@@ -10,6 +10,7 @@ import javax.xml.bind.Unmarshaller;
 import org.dom4j.Document;
 import org.dom4j.io.DocumentResult;
 
+import javafx.application.Application;
 import voidful.entity.session.SessionEntity;
 import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
@@ -19,9 +20,11 @@ public class Control {
 
     private SessionKeeper sessionKeeper;
     JAXBContext sessionContext;
+    private Application app;
 
-    public Control(SessionKeeper s) {
+    public Control(SessionKeeper s, Application app) {
 	this.sessionKeeper = s;
+	this.app = app;
 	try {
 	    sessionContext = JAXBContext.newInstance(SessionEntity.class);
 	} catch (JAXBException e) {
@@ -103,6 +106,11 @@ public class Control {
     private void loadSession(SessionEntity se) {
 	sessionKeeper.setSession(se);
 	sessionKeeper.setEverythingSaved(true);
+
+    }
+
+    public void hyperlinkClick(String url) {
+	app.getHostServices().showDocument(url);
 
     }
 

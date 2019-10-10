@@ -77,7 +77,7 @@ public class MainPane extends VBox {
 	entities.sort((c1, c2) -> c1.getName().compareTo(c2.getName()));
 	for (IEntity entity : entities) {
 	    if (entity instanceof EncounterEntity) {
-		getScrollPaneContent().add(new EncounterComponent((EncounterEntity) entity));
+		getScrollPaneContent().add(new EncounterComponent((EncounterEntity) entity, view));
 	    }
 	}
 	HBox addEncounter = new HBox();

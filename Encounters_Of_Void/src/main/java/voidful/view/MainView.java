@@ -29,7 +29,7 @@ import voidful.util.ExceptionUtil;
 import voidful.util.LoggerUtil;
 import voidful.view.component.MainPane;
 
-public class MainView extends Application implements Observer {
+public class MainView implements Observer {
     private enum ComponentKey {
 	SAVE_BUTTON, NEW_SESSION, OPEN_SESSION, EXIT, SAVE_SESSION,
 
@@ -86,7 +86,7 @@ public class MainView extends Application implements Observer {
 	    LoggerUtil.logInfo("Help");
 	    Hyperlink hyperlink = new Hyperlink("My github");
 	    hyperlink.setOnAction(es -> {
-		getHostServices().showDocument("https://github.com/VoidfulDawn/Encounters-of-Void");
+		control.hyperlinkClick("https://github.com/VoidfulDawn/Encounters-of-Void");
 	    });
 	    DialogUtil.showInfo(hyperlink);
 	});
@@ -177,8 +177,7 @@ public class MainView extends Application implements Observer {
 
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void showEncounterView() {
 	// TODO Auto-generated method stub
 
     }
