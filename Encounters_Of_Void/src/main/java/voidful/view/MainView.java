@@ -5,10 +5,12 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
+import javafx.application.Application;
 import javafx.event.EventTarget;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -18,14 +20,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import voidful.entity.session.EncounterEntity;
+import voidful.entity.session.IEntity.Attributes;
 import voidful.exceptions.InitializationError;
 import voidful.main.Control;
 import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
 import voidful.util.ExceptionUtil;
+import voidful.util.LoggerUtil;
 import voidful.view.component.MainPane;
 
-public class MainView implements Observer {
+public class MainView extends Application implements Observer {
     private enum ComponentKey {
 	SAVE_BUTTON, NEW_SESSION, OPEN_SESSION, EXIT, SAVE_SESSION,
 
@@ -42,11 +46,11 @@ public class MainView implements Observer {
 	this.sessionKeeper = s;
 	this.sessionKeeper.addObserver(this);
 	this.control = c;
-	this.init();
+	this.initialize();
 
     }
 
-    private void init() {
+    private void initialize() {
 	if (ps == null)
 	    throw new InitializationError(ExceptionUtil.PS_NOT_FOUND_MESSAGE);
 	interactables = new HashMap<>();
@@ -79,8 +83,12 @@ public class MainView implements Observer {
 	Menu helpMenu = new Menu("Help");
 	onAction(helpMenu);
 	helpMenu.setOnAction(e -> {
-	    System.out.println("help was clicked");
-	    DialogUtil.showInfo();
+	    LoggerUtil.logInfo("Help");
+	    Hyperlink hyperlink = new Hyperlink("My github");
+	    hyperlink.setOnAction(es -> {
+		getHostServices().showDocument("https://github.com/VoidfulDawn/Encounters-of-Void");
+	    });
+	    DialogUtil.showInfo(hyperlink);
 	});
 	MenuItem newItem = new MenuItem("New Session");
 	MenuItem saveItem = new MenuItem("Save Session");
@@ -151,12 +159,27 @@ public class MainView implements Observer {
     }
 
     public void addEncounter() {
-	EncounterEntity e = new EncounterEntity();
-	e.setDescription("This is a test encounter... yes yes");
-	e.setName("TestEncounter");
-	e.setAveragePlayerLevel("7");
 
-	sessionKeeper.getSession().getChildren().add(e);
+	try {
+	    Map<Attributes, String> attributes = DialogUtil.createEncounterSession();
+	    if (attributes != null && !attributes.isEmpty()) {
+		EncounterEntity e = new EncounterEntity();
+		e.setName(attributes.get(Attributes.NAME));
+		e.setDescription(attributes.get(Attributes.DESCRIPTION));
+		e.setAveragePlayerLevel(attributes.get(Attributes.APL));
+		sessionKeeper.getSession().getChildren().add(e);
+
+	    }
+	} catch (Exception ex) {
+	    LoggerUtil.logError(ex.getMessage());
+	    return;
+	}
+
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+	// TODO Auto-generated method stub
 
     }
 }

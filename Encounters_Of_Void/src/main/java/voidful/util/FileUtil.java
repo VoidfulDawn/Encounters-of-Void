@@ -15,20 +15,23 @@ import java.util.stream.Stream;
 import org.dom4j.Document;
 
 public class FileUtil {
-	public final static File DIRECTORY = new File(System.getProperty("user.home")+"/EnOVoid");
-	public final static File SESSION = new File(DIRECTORY.getAbsolutePath().concat("/Sessions"));
-	public final static void saveFile(File path,String name, Document doc)
-	{
-		try(BufferedWriter bW = new BufferedWriter(new FileWriter(path.getAbsolutePath().concat("/"+name)))){
-			bW.write(doc.asXML());
-		} catch (IOException e) {
-			e.printStackTrace();
-			DialogUtil.showError(e.getMessage());
-		}
+    public final static File DIRECTORY = new File(
+	    System.getProperty("user.home").concat("/AppData/Local/Programs").concat("/EnOVoid"));
+    public final static File SESSION = new File(DIRECTORY.getAbsolutePath().concat("/Sessions"));
+    public final static File LOG = new File(DIRECTORY.getAbsolutePath().concat("/LOG"));
+
+    public final static void saveFile(File path, String name, Document doc) {
+	try (BufferedWriter bW = new BufferedWriter(new FileWriter(path.getAbsolutePath().concat("/" + name)))) {
+	    bW.write(doc.asXML());
+	} catch (IOException e) {
+	    e.printStackTrace();
+	    DialogUtil.showError(e.getMessage());
 	}
-	public final static List<File> getAllSessions(){
-		
-		return Arrays.asList(SESSION.listFiles());
-		
-	}
+    }
+
+    public final static List<File> getAllSessions() {
+
+	return Arrays.asList(SESSION.listFiles());
+
+    }
 }
