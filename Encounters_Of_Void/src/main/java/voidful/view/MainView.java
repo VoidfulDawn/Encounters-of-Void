@@ -27,7 +27,8 @@ import voidful.model.SessionKeeper;
 import voidful.util.DialogUtil;
 import voidful.util.ExceptionUtil;
 import voidful.util.LoggerUtil;
-import voidful.view.component.MainPane;
+import voidful.view.panel.MainPane;
+import voidful.view.panel.MainPane.Status;
 
 public class MainView implements Observer {
     private enum ComponentKey {
@@ -177,8 +178,10 @@ public class MainView implements Observer {
 
     }
 
-    public void showEncounterView() {
-	// TODO Auto-generated method stub
+    public void showEncounterView(EncounterEntity encounter) {
+	sessionKeeper.setEverythingSaved(true);
+	sessionKeeper.setEncounter(encounter);
+	mainPane.updateScreen(Status.ENCOUNTER_LOADED);
 
     }
 }

@@ -13,10 +13,12 @@ public class EncounterComponent extends StackPane {
 
     private static final String APL_TEXT = "APL: ";
     private MainView view;
+    private final EncounterEntity encounter;
 
     public EncounterComponent(EncounterEntity e, MainView view) {
 	super();
 	this.view = view;
+	this.encounter = e;
 	Label title = new Label(e.getName());
 	EncounterComponent.setAlignment(title, Pos.TOP_CENTER);
 	Label apl = new Label(APL_TEXT + e.getAveragePlayerLevel());
@@ -27,7 +29,7 @@ public class EncounterComponent extends StackPane {
 	Button edit = new Button("Edit Encounter");
 	EncounterComponent.setAlignment(edit, Pos.BOTTOM_RIGHT);
 	edit.setOnAction(action -> {
-	    editEncounter(action);
+	    editEncounter(action, encounter);
 	});
 
 	this.setStyle("-fx-border-color: black");
@@ -38,12 +40,8 @@ public class EncounterComponent extends StackPane {
 	this.setMinWidth(621);
     }
 
-    private void editEncounter(ActionEvent e) {
-	view.showEncounterView();
-    }
-
-    private void showEncounterView() {
-
+    private void editEncounter(ActionEvent e, EncounterEntity encounter) {
+	view.showEncounterView(encounter);
     }
 
 }

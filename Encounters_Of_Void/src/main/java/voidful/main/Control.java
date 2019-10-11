@@ -50,6 +50,7 @@ public class Control {
     private void saveCorrectly() {
 
 	sessionKeeper.setEverythingSaved(true);
+	saveSession(sessionKeeper.getSession());
     }
 
     public void createAndLoadNewSession() {

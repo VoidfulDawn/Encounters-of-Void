@@ -1,4 +1,4 @@
-package voidful.view.component;
+package voidful.view.panel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,25 +19,26 @@ import voidful.view.MainView;
 public class MainPane extends VBox {
     private SessionKeeper sessionKeeper;
     private Status currentStatus;
-    private ScrollPane pane;
+    private SessionPanel sessionPane;
     private MainView view;
+    private EncounterPanel encounterPane;
 
     public enum Status {
-	NO_SESSION, SESSION_LOADED
+	NO_SESSION, SESSION_LOADED, ENCOUNTER_LOADED
     }
 
     public MainPane(SessionKeeper sessionKeeper, MainView view) {
 	this.sessionKeeper = sessionKeeper;
 	this.currentStatus = Status.NO_SESSION;
-	this.pane = new ScrollPane(new VBox());
+	this.sessionPane = new SessionPanel();
+	this.encounterPane = new EncounterPanel();
 	this.view = view;
-	pane.setHbarPolicy(ScrollBarPolicy.NEVER);
-	pane.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+	sessionPane.setHbarPolicy(ScrollBarPolicy.NEVER);
+	sessionPane.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 	this.setWidth(640);
 	this.setHeight(400);
 	this.setMaxWidth(640);
 	this.setMaxHeight(400);
-	this.getChildren().add(pane);
 	this.setVisible(false);
 
     }
@@ -53,10 +54,15 @@ public class MainPane extends VBox {
 	    case NO_SESSION:
 		break;
 	    case SESSION_LOADED:
-		getScrollPaneContent().clear();
+		this.getChildren().clear();
+		this.getChildren().add(sessionPane);
 		this.setVisible(true);
-		loadSessionEntities();
+		sessionPane.loadSessionEntities(this);
 		addFurtherOptions();
+		break;
+	    case ENCOUNTER_LOADED:
+		this.getChildren().remove(sessionPane);
+		this.getChildren().add(encounterPane);
 		break;
 	    }
 	} catch (Exception e) {
@@ -68,31 +74,36 @@ public class MainPane extends VBox {
 
     }
 
-    private void loadSessionEntities() {
-	getScrollPaneContent().clear();
-	List<? extends IEntity> entities;
-	if (sessionKeeper.getSession().getChildren() == null)
-	    sessionKeeper.getSession().setChildren(new ArrayList<>());
-	entities = sessionKeeper.getSession().getChildren();
-	entities.sort((c1, c2) -> c1.getName().compareTo(c2.getName()));
-	for (IEntity entity : entities) {
-	    if (entity instanceof EncounterEntity) {
-		getScrollPaneContent().add(new EncounterComponent((EncounterEntity) entity, view));
-	    }
-	}
-	HBox addEncounter = new HBox();
-	Button add = new Button("++ADD++");
-	add.setOnAction(e -> {
-	    view.addEncounter();
-	    loadSessionEntities();
-	});
-
-	addEncounter.getChildren().add(add);
-	getScrollPaneContent().add(getScrollPaneContent().size(), addEncounter);
+    private ObservableList<Node> getScrollPaneContent() {
+	return ((VBox) sessionPane.getContent()).getChildren();
     }
 
-    private ObservableList<Node> getScrollPaneContent() {
-	return ((VBox) pane.getContent()).getChildren();
+    public SessionKeeper getSessionKeeper() {
+	return sessionKeeper;
+    }
+
+    public void setSessionKeeper(SessionKeeper sessionKeeper) {
+	this.sessionKeeper = sessionKeeper;
+    }
+
+    public ScrollPane getPane() {
+	return sessionPane;
+    }
+
+    MainView getView() {
+	return view;
+    }
+
+    public void setView(MainView view) {
+	this.view = view;
+    }
+
+    public void setCurrentStatus(Status currentStatus) {
+	this.currentStatus = currentStatus;
+    }
+
+    public void update() {
+
     }
 
 }
