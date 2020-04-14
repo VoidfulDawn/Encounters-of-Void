@@ -39,4 +39,8 @@ public class SessionKeeper extends Observable {
 
     }
 
+    public EncounterEntity getEncounter() {
+	return encounter;
+    }
+
 }

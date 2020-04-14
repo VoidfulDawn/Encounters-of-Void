@@ -21,6 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import voidful.entity.session.EncounterEntity;
 import voidful.entity.session.IEntity.Attributes;
+import voidful.entity.session.Monster;
 import voidful.exceptions.InitializationError;
 import voidful.main.Control;
 import voidful.model.SessionKeeper;
@@ -71,7 +72,7 @@ public class MainView implements Observer {
 	root.setTop(headerBars);
 	root.setCenter(mainPane);
 	System.out.println(root.getChildren().size());
-	Scene scene = new Scene(root, 960, 600);
+	Scene scene = new Scene(root, 1024, 768);
 	ps.setTitle("Encounters of Void");
 	ps.setScene(scene);
 	ps.show();
@@ -184,4 +185,27 @@ public class MainView implements Observer {
 	mainPane.updateScreen(Status.ENCOUNTER_LOADED);
 
     }
+
+    public void showMonsterView(Monster monster) {
+	// TODO Auto-generated method stub
+
+    }
+
+    public void addMonster() {
+	try {
+	    Map<Attributes, String> attributes = DialogUtil.createMonster();
+	    if (attributes != null && !attributes.isEmpty()) {
+		Monster e = new Monster();
+		e.setName(attributes.get(Attributes.NAME));
+		e.setDescription(attributes.get(Attributes.DESCRIPTION));
+		e.setChallengeRating(attributes.get(Attributes.CR));
+		sessionKeeper.getEncounter().getMonster().add(e);
+
+	    }
+	} catch (Exception ex) {
+	    LoggerUtil.logError(ex.getMessage());
+	    return;
+	}
+    }
+
 }

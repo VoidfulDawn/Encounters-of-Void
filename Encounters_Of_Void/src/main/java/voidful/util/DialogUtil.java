@@ -143,4 +143,47 @@ public class DialogUtil implements Util {
 	return m;
 
     }
+
+    public static Map<Attributes, String> createMonster() {
+
+	Dialog<Map<Attributes, String>> dialog = new Dialog<>();
+	dialog.setTitle("Create a new Monster");
+	dialog.setHeaderText("Create here the basics for your monster. Don't worry you can edit it later");
+	ButtonType createButton = new ButtonType("Create Monster", ButtonData.OK_DONE);
+	dialog.getDialogPane().getButtonTypes().addAll(createButton, ButtonType.CANCEL);
+	GridPane grid = new GridPane();
+	grid.setHgap(10);
+	grid.setVgap(10);
+	grid.setPadding(new Insets(20, 150, 10, 10));
+
+	TextField name = new TextField();
+	name.setPromptText("Monster Name");
+	grid.add(new Label("Name:"), 0, 0);
+	grid.add(name, 1, 0, 3, 1);
+	TextField desc = new TextField();
+	desc.setPromptText("Look it is a very spooky monster");
+	grid.add(new Label("Description:"), 0, 1);
+	grid.add(desc, 1, 1, 3, 1);
+	TextField CR = new TextField();
+	CR.setPromptText("XX");
+	grid.add(new Label("CR:"), 0, 2);
+	grid.add(CR, 1, 2, 3, 1);
+
+	dialog.getDialogPane().setContent(grid);
+	Platform.runLater(() -> name.requestFocus());
+
+	dialog.setResultConverter(dialogButton -> {
+	    if (dialogButton == createButton) {
+		Map<Attributes, String> attributeMap = new HashMap<>();
+		attributeMap.putIfAbsent(Attributes.NAME, name.getText());
+		attributeMap.putIfAbsent(Attributes.DESCRIPTION, desc.getText());
+		attributeMap.putIfAbsent(Attributes.CR, CR.getText());
+		return attributeMap;
+	    }
+	    return null;
+	});
+	Map<Attributes, String> m = dialog.showAndWait().get();
+	return m;
+
+    }
 }

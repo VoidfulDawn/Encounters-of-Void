@@ -25,7 +25,6 @@ public class EncounterComponent extends StackPane {
 	EncounterComponent.setAlignment(apl, Pos.TOP_RIGHT);
 	Label description = new Label(e.getDescription());
 	EncounterComponent.setAlignment(description, Pos.CENTER_LEFT);
-
 	Button edit = new Button("Edit Encounter");
 	EncounterComponent.setAlignment(edit, Pos.BOTTOM_RIGHT);
 	edit.setOnAction(action -> {
@@ -34,10 +33,9 @@ public class EncounterComponent extends StackPane {
 
 	this.setStyle("-fx-border-color: black");
 	this.getChildren().addAll(title, apl, description, edit);
-	this.setWidth(621);
-	this.setHeight(100);
+
 	this.setMinHeight(100);
-	this.setMinWidth(621);
+	this.setMinWidth(620);
     }
 
     private void editEncounter(ActionEvent e, EncounterEntity encounter) {

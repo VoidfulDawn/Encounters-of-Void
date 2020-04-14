@@ -35,10 +35,10 @@ public class MainPane extends VBox {
 	this.view = view;
 	sessionPane.setHbarPolicy(ScrollBarPolicy.NEVER);
 	sessionPane.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-	this.setWidth(640);
-	this.setHeight(400);
-	this.setMaxWidth(640);
-	this.setMaxHeight(400);
+	this.setWidth(1024);
+	this.setHeight(768);
+	this.setMaxWidth(1024);
+	this.setMaxHeight(768);
 	this.setVisible(false);
 
     }
@@ -63,6 +63,7 @@ public class MainPane extends VBox {
 	    case ENCOUNTER_LOADED:
 		this.getChildren().remove(sessionPane);
 		this.getChildren().add(encounterPane);
+		encounterPane.loadEncounter(this);
 		break;
 	    }
 	} catch (Exception e) {
